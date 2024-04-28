@@ -19,13 +19,13 @@ conda create -n $ENV_NAME python=$PYTHON_VERSION
 conda activate $ENV_NAME
 
 # Install PyTorch, torchvision, and PyTorch3D using conda
-conda install pytorch=$PYTORCH_VERSION torchvision pytorch-cuda=$CUDA_VERSION -c pytorch -c nvidia
-conda install -c fvcore -c iopath -c conda-forge fvcore iopath
-conda install pytorch3d -c pytorch3d
+conda install pytorch=$PYTORCH_VERSION torchvision pytorch-cuda=$CUDA_VERSION -c pytorch -c nvidia -y
+conda install -c fvcore -c iopath -c conda-forge fvcore iopath -y
+conda install pytorch3d -c pytorch3d -y
 
 # Install pip packages
 pip install hydra-core --upgrade
-pip install omegaconf opencv-python einops visdom 
+pip install omegaconf opencv-python einops 
 pip install accelerate==0.24.0
 
 # Install HLoc for extracting 2D matches (optional if GGS is not needed)
